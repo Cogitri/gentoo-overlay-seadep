@@ -13,4 +13,4 @@ This is by no means an official overlay, just something I do in my free time
 
 ## Installing
 
-Create a local overlay (https://wiki.gentoo.org/wiki/Overlay/Local_overlay) and copy the files of this repo into it. After that you just have to emerge easy-ebook-viewer
+Create a local overlay (https://wiki.gentoo.org/wiki/Overlay/Local_overlay) and copy the files of this repo into it. After that you just have to emerge ebook-viewer
