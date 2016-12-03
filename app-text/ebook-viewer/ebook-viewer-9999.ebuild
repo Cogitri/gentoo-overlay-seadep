@@ -1,9 +1,8 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 EAPI=6
 
-inherit git-r3 eutils
+inherit git-r3 eutils gnome2-utils
 
 DESCRIPTION="Simple Ebook viewer"
 
@@ -29,6 +28,14 @@ src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
 }
 
+pkg_preinst() {
+	gnome2_icon_savelist
+}
+
 pkg_postinst() {
-	gtk-update-icon-cache -f /usr/share/icons/hicolor/
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
 }
