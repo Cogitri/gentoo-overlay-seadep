@@ -9,16 +9,22 @@ DESCRIPTION="A simple way to find and share indie games online for free."
 
 HOMEPAGE="https://itch.io/"
 
-SRC_URI="https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-amd64.tar.xz"
+SRC_URI="amd64?	( https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-amd64.tar.xz)
+	 x86?	( https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-386.tar.xz )"
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
 LICENSE="GPLv3"
 SLOT="0"
-
+RESTRICT="mirror"
 RDEPEND=""
 
-S=${WORKDIR}/itch-${PV}-amd64
+amd64? S=${WORKDIR}/itch-${PV}-amd64
+x86?   S=${WORKDIR}/itch-${PV}-386
+
+src_unpack() {
+	unpack ${A}
+	mv ${WORKDIR}/itch 
 
 src_install() {
 	local destdir="/opt/${PN}"
