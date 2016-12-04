@@ -7,6 +7,8 @@ The following packages are available in this overlay:
 
 Easy-Ebook-Viewer - https://github.com/michaldaniel/Ebook-Viewer
 
+Itch - https://github.com/itchio/itch
+
 ## Warning
 This is by no means an official overlay, just something I do in my free time
 **Use ebuilds supplied in this repository on your own risk**. They've been tested on my own system setup (~amd64) and (most likely) tested on virtual systems (amd64 and x86).
