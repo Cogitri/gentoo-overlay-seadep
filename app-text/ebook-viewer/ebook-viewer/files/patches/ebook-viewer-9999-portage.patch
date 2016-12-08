@@ -1,0 +1,50 @@
+# Make the Makefile suitable for portage
+diff --git a/Makefile b/Makefile
+index 57c4496..954060b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,8 @@
+ PREFIX = /usr
+-EBOOKVIEWER_DIR = ${PREFIX}/share/easy-ebook-viewer
+-BINDIR = ${PREFIX}/bin
+-PYTHON = ${BINDIR}/python3
++EBOOKVIEWER_DIR = ${DESTDIR}${PREFIX}/share/easy-ebook-viewer
++BINDIR = ${DESTDIR}${PREFIX}/bin
++PYTHON = ${PREFIX}/bin/python3
++ICONDIR = ${DESTDIR}${PREFIX}
+ 
+ all: easy-ebook-viewer
+ 
+@@ -51,17 +52,16 @@ install-locale:
+ 	install -m 644 po/es.mo ${EBOOKVIEWER_DIR}/locale/es/LC_MESSAGES/easy-ebook-viewer.mo
+ 
+ install-desktop:
+-	install -d ${PREFIX}/share/icons/hicolor/24x24/apps
+-	install -d ${PREFIX}/share/icons/hicolor/32x32/apps
+-	install -d ${PREFIX}/share/icons/hicolor/48x48/apps
+-	install -d ${PREFIX}/share/icons/hicolor/64x64/apps
+-	install -d ${PREFIX}/share/icons/hicolor/scalable/apps
+-	install -d ${PREFIX}/share/applications
++	install -d ${ICONDIR}/share/icons/hicolor/24x24/apps
++	install -d ${ICONDIR}/share/icons/hicolor/32x32/apps
++	install -d ${ICONDIR}/share/icons/hicolor/48x48/apps
++	install -d ${ICONDIR}/share/icons/hicolor/64x64/apps
++	install -d ${ICONDIR}/share/icons/hicolor/scalable/apps
++	install -d ${ICONDIR}/share/applications
+ 	install -m 644 misc/easy-ebook-viewer-scalable.svg \
+-		${PREFIX}/share/icons/hicolor/scalable/apps/easy-ebook-viewer.svg
++		${ICONDIR}/share/icons/hicolor/scalable/apps/easy-ebook-viewer.svg
+ 	install -m 644 misc/easy-ebook-viewer.desktop \
+-		${PREFIX}/share/applications/easy-ebook-viewer.desktop
+-	gtk-update-icon-cache -f ${PREFIX}/share/icons/hicolor/
++		${ICONDIR}/share/applications/easy-ebook-viewer.desktop
+ 
+ clean:
+ 	rm -f easy-ebook-viewer
+@@ -76,4 +76,4 @@ uninstall-desktop:
+ 	rm -f ${PREFIX}/share/applications/easy-ebook-viewer.desktop
+ 	rm -f ${PREFIX}/share/icons/hicolor/*/apps/easy-ebook-viewer.png
+ 
+-.PHONY: all install install-bin install-desktop
+\ No newline at end of file
++.PHONY: all install install-bin install-desktop
