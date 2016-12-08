@@ -9,18 +9,32 @@ DESCRIPTION="A simple way to find and share indie games online for free."
 
 HOMEPAGE="https://itch.io/"
 
-SRC_URI="https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-amd64.tar.xz"
+SRC_URI="https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-amd64.tar.xz
+	 x86?	( https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-386.tar.xz )"
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
 LICENSE="GPLv3"
 SLOT="0"
-
+RESTRICT="mirror"
 RDEPEND=""
 
-S=${WORKDIR}/itch-${PV}-amd64
+
+src_unpack() {
+    	if [ "${A}" != "" ]; then
+        	unpack ${A}
+    	fi
+
+	# As itch uses different names within their tarball depending on the arch this will set it to the correct name.
+	if use amd64; then
+		S=${WORKDIR}/itch-${PV}-amd64
+	elif use x86; then
+		S=${WORKDIR}/itch-${PV}-386
+	fi
+}
 
 src_install() {
+
 	local destdir="/opt/${PN}"
 
 	insinto $destdir
