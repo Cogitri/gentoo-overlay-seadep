@@ -5,7 +5,7 @@ EAPI=6
 
 inherit eutils gnome2-utils
 
-DESCRIPTION="A simple way to find and share indie games online for free."
+DESCRIPTION="Mathematics software for geometry"
 
 HOMEPAGE="https://www.geogebra.org"
 
@@ -13,7 +13,7 @@ SRC_URI="https://www.geogebra.org/home/get/package/linux-port -> ${PN}.tar.bz2"
 
 KEYWORDS="~amd64 ~x86"
 
-LICENSE="GPLv3"
+LICENSE=" Creative Commons Attribution-NonCommercial-NoDerivs 3.0, GPL"
 SLOT="0"
 RESTRICT="mirror"
 RDEPEND=""
