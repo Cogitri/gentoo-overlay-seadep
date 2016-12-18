@@ -14,33 +14,31 @@ SRC_URI="https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-amd6
 
 KEYWORDS="~amd64 ~x86"
 
-LICENSE="GPLv3"
+LICENSE="GPL-3"
 SLOT="0"
 RESTRICT="mirror"
 RDEPEND=""
-DEPEND="
-	dev-libs/expat
+DEPEND="dev-libs/expat
 	dev-libs/nss
 	gnome-base/gconf
 	media-gfx/graphite2
 	media-libs/alsa-lib
-	media-libs/libpng
+	media-libs/libpng:*
 	net-print/cups
 	net-libs/gnutls
 	sys-libs/zlib
-	x11-libs/gtk+
+	x11-libs/gtk+:*
 	x11-libs/libnotify
 	x11-libs/libxcb
 	x11-libs/libXScrnSaver
-	x11-libs/libXtst
-	"
+	x11-libs/libXtst"
 
 
 
 src_unpack() {
-    	if [ "${A}" != "" ]; then
-        	unpack ${A}
-    	fi
+	if [ ${A} != "" ]; then
+		unpack ${A}
+	fi
 
 	# As itch uses different names within their tarball depending on the arch this will set it to the correct name.
 	if use amd64; then
@@ -56,8 +54,7 @@ src_install() {
 
 	insinto $destdir
 	doins -r locales resources
-	doins \
-		blink_image_resources_200_percent.pak \
+	doins	blink_image_resources_200_percent.pak \
 		content_resources_200_percent.pak \
 		ui_resources_200_percent.pak \
 		views_resources_200_percent.pak \
