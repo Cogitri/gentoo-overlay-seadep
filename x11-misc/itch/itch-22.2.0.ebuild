@@ -17,6 +17,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="GPLv3"
 SLOT="0"
 RESTRICT="mirror"
+RDEPEND=""
 DEPEND="
 	dev-libs/expat
 	dev-libs/nss
@@ -33,7 +34,7 @@ DEPEND="
 	x11-libs/libXScrnSaver
 	x11-libs/libXtst
 	"
-RDEPEND="${DEPEND}"
+
 
 
 src_unpack() {
