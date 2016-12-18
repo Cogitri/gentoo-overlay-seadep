@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
-		<flag name="binary">Use provived jre (necessary for loggin into Geogebra)
+		<flag name="binary">Use provived jre (necessary for logging into Geogebra)
 		</flag>	
 	</use>
 </pkgmetadata>
