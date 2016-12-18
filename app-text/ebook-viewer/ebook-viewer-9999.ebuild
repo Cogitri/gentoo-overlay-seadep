@@ -12,7 +12,7 @@ SRC_URI=""
 EGIT_REPO_URI="https://github.com/michaldaniel/Ebook-Viewer.git"
 KEYWORDS="~amd64"
 
-LICENSE="GPLv3"
+LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="net-libs/webkit-gtk[introspection]
