@@ -12,9 +12,12 @@ Itch - https://github.com/itchio/itch
 Geogebra - https://www.geogebra.org/
 
 ## Warning
-This is by no means an official overlay, just something I do in my free time
+This overlay is not official but is available in layman's repository.
+
 **Use ebuilds supplied in this repository on your own risk**. They've been tested on my own system setup (~amd64) and (most likely) tested on virtual systems (amd64 and x86).
 
 ## Installing
 
-Create a local overlay (https://wiki.gentoo.org/wiki/Overlay/Local_overlay) and copy the files of this repo into it. After that you just have to emerge ebook-viewer
+First time using layman? See https://wiki.gentoo.org/wiki/Layman
+
+    layman -a seadep
