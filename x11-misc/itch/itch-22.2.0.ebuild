@@ -68,7 +68,7 @@ src_install() {
 	exeinto $destdir
 	doexe itch
 
-	doins $FILESDIR/ico/itch.png
+	doicon -s 256 $FILESDIR/ico/itch.png
 	dosym $destdir/itch /usr/bin/itch
 	make_desktop_entry itch Itch \
 		"/opt/itch/itch.png" \

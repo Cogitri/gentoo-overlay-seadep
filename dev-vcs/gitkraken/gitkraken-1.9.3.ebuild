@@ -48,10 +48,10 @@ src_install() {
 	exeinto $destdir
 	doexe gitkraken
 
-	doins $FILESDIR/ico/gitkraken.png
+	doicon -s 512 $FILESDIR/ico/gitkraken.png
 	dosym $destdir/gitkraken /usr/bin/gitkraken
 	make_desktop_entry gitkraken Gitkraken \
-		"/opt/gitkraken/gitkraken.png" \
+		"gitkraken" \
 		Network
 }
 
