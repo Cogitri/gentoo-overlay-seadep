@@ -18,9 +18,10 @@ KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="GPL-3"
 RDEPEND=""
-DEPEND="x11-libs/gtk+:3
-	=dev-lang/vala-0.32.1
+DEPEND="=dev-lang/vala-0.32.1
+	dev-libs/gobject-introspection
 	media-sound/pulseaudio
+	x11-libs/gtk+:3
 	"
 
 src_prepare() {
