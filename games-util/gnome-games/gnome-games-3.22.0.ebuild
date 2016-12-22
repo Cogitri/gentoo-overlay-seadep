@@ -18,10 +18,12 @@ KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="GPL-3"
 RDEPEND=""
-DEPEND="${RDEPEND}
-	dev-libs/retro-gtk
+DEPEND="app-arch/libarchive
+	app-misc/tracker
 	=dev-lang/vala-0.32.1
-	media-libs/grilo[vala]"
+	dev-libs/retro-gtk
+	media-libs/grilo[vala]
+	x11-libs/cairo"
 
 src_prepare() { 
 	#Set the used vala version to 0.32, as gentoo doesn't symlink the newest version to valac
