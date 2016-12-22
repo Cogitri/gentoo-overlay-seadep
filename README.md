@@ -7,9 +7,16 @@ The following packages are available in this overlay:
 
 Easy-Ebook-Viewer - https://github.com/michaldaniel/Ebook-Viewer
 
+Geogebra - https://www.geogebra.org/
+
+Gitkraken - https://www.gitkraken.com
+
+Gnome-Games - https://wiki.gnome.org/Apps/Games
+
 Itch - https://github.com/itchio/itch
 
-Geogebra - https://www.geogebra.org/
+Retro-GTK - https://git.gnome.org/browse/retro-gtk/
+
 
 ## Warning
 This overlay is not official but is available in layman's repository.
