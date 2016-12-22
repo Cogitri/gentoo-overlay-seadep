@@ -71,7 +71,7 @@ src_install() {
 	doicon -s 256 $FILESDIR/ico/itch.png
 	dosym $destdir/itch /usr/bin/itch
 	make_desktop_entry itch Itch \
-		"/opt/itch/itch.png" \
+		"itch" \
 		Network
 }
 
