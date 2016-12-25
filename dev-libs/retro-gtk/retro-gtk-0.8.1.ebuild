@@ -26,7 +26,7 @@ DEPEND="=dev-lang/vala-0.32.1
 
 src_prepare() {
 	#Set the used vala version to 0.32, as gentoo doesn't symlink the newest version to valac
-	export VALAC="$(type -P valac-0.32)" 
+	export VALAC="$(type -P valac-0.32)"
 	./autogen.sh #Not pretty, I'll try to make it manually soon
 	eapply_user
 }
@@ -37,6 +37,6 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-} 
+}
 
 

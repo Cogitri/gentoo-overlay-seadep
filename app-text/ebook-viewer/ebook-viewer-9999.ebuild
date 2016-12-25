@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=6
 
-inherit git-r3 eutils gnome2-utils
+inherit git-r3 eutils gnome2-utils xdg
 
 DESCRIPTION="Simple Ebook viewer"
 
@@ -23,6 +23,7 @@ RDEPEND="net-libs/webkit-gtk[introspection]
 src_prepare() {
 	eapply_user
 	epatch "${FILESDIR}/patches/${P}-portage.patch"
+	xdg_src_prepare
 }
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
@@ -30,12 +31,15 @@ src_install() {
 
 pkg_preinst() {
 	gnome2_icon_savelist
+	xdg_pkg_preinst
 }
 
 pkg_postinst() {
 	gnome2_icon_cache_update
+	xdg_pkg_postinst
 }
 
 pkg_postrm() {
 	gnome2_icon_cache_update
+	xdg_pkg_postrm
 }

@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit eutils gnome2-utils
+inherit eutils gnome2-utils xdg
 
 DESCRIPTION="A simple way to find and share indie games online for free."
 
@@ -76,13 +76,16 @@ src_install() {
 }
 
 pkg_preinst() {
+	xdg_pkg_preinst
 	gnome2_icon_savelist
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
 	gnome2_icon_cache_update
 }
 
 pkg_postrm() {
+	xdg_pkg_postrm
 	gnome2_icon_cache_update
 }

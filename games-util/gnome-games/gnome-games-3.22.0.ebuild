@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit eutils autotools
+inherit eutils autotools gnome2-utils xdg
 
 DESCRIPTION="A game manager application for GNOME"
 
@@ -25,9 +25,9 @@ DEPEND="app-arch/libarchive
 	media-libs/grilo[vala]
 	x11-libs/cairo"
 
-src_prepare() { 
+src_prepare() {
 	#Set the used vala version to 0.32, as gentoo doesn't symlink the newest version to valac
-	export VALAC="$(type -P valac-0.32)" 
+	export VALAC="$(type -P valac-0.32)"
 	eautoreconf
 	eapply_user
 }
@@ -38,6 +38,20 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-} 
+}
 
+pkg_preinst() {
+	gnome2_icon_savelist
+	xdg_pkg_preinst
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+	xdg_pkg_postinst
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
+	xdg_pkg_postrm
+}
 
