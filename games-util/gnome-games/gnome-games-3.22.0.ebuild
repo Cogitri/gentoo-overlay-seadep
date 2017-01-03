@@ -3,8 +3,10 @@
 # $Id$
 
 EAPI=6
+VALA_MIN_API_VERSION="0.26"
+VALA_USE_DEPEND="vapigen"
 
-inherit eutils autotools gnome2-utils xdg
+inherit eutils autotools gnome2-utils vala xdg
 
 DESCRIPTION="A game manager application for GNOME"
 
@@ -20,14 +22,14 @@ LICENSE="GPL-3"
 RDEPEND=""
 DEPEND="app-arch/libarchive
 	app-misc/tracker
-	=dev-lang/vala-0.32.1
+	${vala_depend}
 	dev-libs/retro-gtk
 	media-libs/grilo[vala]
 	x11-libs/cairo"
 
 src_prepare() {
 	#Set the used vala version to 0.32, as gentoo doesn't symlink the newest version to valac
-	export VALAC="$(type -P valac-0.32)"
+	vala_src_prepare
 	eautoreconf
 	eapply_user
 }

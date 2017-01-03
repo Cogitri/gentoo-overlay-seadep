@@ -3,8 +3,10 @@
 # $Id$
 
 EAPI=6
+VALA_MIN_API_VERSION="0.26"
+VALA_USE_DEPEND="vapigen"
 
-inherit eutils autotools
+inherit eutils autotools vala
 
 DESCRIPTION="Toolkit to write Gtk+ 3 based libretro frontends"
 
@@ -18,7 +20,7 @@ KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="GPL-3"
 RDEPEND=""
-DEPEND="=dev-lang/vala-0.32.1
+DEPEND="${vala_depend}
 	dev-libs/gobject-introspection
 	media-sound/pulseaudio
 	x11-libs/gtk+:3
@@ -26,7 +28,7 @@ DEPEND="=dev-lang/vala-0.32.1
 
 src_prepare() {
 	#Set the used vala version to 0.32, as gentoo doesn't symlink the newest version to valac
-	export VALAC="$(type -P valac-0.32)"
+	vala_src_prepare
 	./autogen.sh #Not pretty, I'll try to make it manually soon
 	eapply_user
 }
