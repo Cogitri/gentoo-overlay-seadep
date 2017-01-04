@@ -13,6 +13,8 @@ Gitkraken - https://www.gitkraken.com
 
 Gnome-Games - https://wiki.gnome.org/Apps/Games
 
+Hyper - https://hyper.is/
+
 Itch - https://github.com/itchio/itch
 
 Retro-GTK - https://git.gnome.org/browse/retro-gtk/
