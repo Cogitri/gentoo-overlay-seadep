@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}"
 RESTRICT="mirror"
 
 src_prepare() {
-	einfo "Please create /usr/etc if you're using nodejs 5.6.0>,"
+	einfo "Please create /usr/etc if you're using nodejs <=5.6.0,"
 	einfo "as NPM otherwise tries to create it,violating the sandbox rules."
 	einfo "See https://github.com/npm/npm/issues/11486"
 	npm install
