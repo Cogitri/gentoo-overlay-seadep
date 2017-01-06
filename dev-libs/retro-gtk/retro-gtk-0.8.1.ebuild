@@ -1,22 +1,17 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=6
 VALA_MIN_API_VERSION="0.26"
 VALA_USE_DEPEND="vapigen"
-
 inherit eutils autotools vala
-
 DESCRIPTION="Toolkit to write Gtk+ 3 based libretro frontends"
-
 HOMEPAGE="https://git.gnome.org/browse/retro-gtk/"
-
 SRC_URI="https://git.gnome.org/browse/retro-gtk/snapshot/retro-gtk-${PV}.tar.xz"
 RESTRICT="mirror"
 IUSE="static-libs"
 KEYWORDS="~amd64"
-
 SLOT="0"
 LICENSE="GPL-3"
 RDEPEND=""
