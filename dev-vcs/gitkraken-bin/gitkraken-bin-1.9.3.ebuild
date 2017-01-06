@@ -3,17 +3,12 @@
 # $Id$
 
 EAPI=6
-
 inherit eutils gnome2-utils xdg
-
 DESCRIPTION="The downright luxurious Git client,for Windows, Mac & Linux"
-
 HOMEPAGE="https://www.gitkraken.com"
-
 SRC_URI="https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz"
 RESTRICT="mirror"
 KEYWORDS="~amd64"
-
 SLOT="0"
 LICENSE="EULA"
 RDEPEND=""
@@ -35,7 +30,6 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}
 src_install() {
 	local destdir="/opt/${PN}"
-
 	insinto $destdir
 	doins -r locales resources
 	doins	content_shell.pak \
@@ -44,10 +38,8 @@ src_install() {
 		snapshot_blob.bin \
 		libffmpeg.so \
 		libnode.so
-
 	exeinto $destdir
 	doexe gitkraken
-
 	doicon -s 512 $FILESDIR/ico/gitkraken.png
 	dosym $destdir/gitkraken /usr/bin/gitkraken
 	make_desktop_entry gitkraken Gitkraken \
