@@ -5,18 +5,13 @@
 EAPI=6
 VALA_MIN_API_VERSION="0.26"
 VALA_USE_DEPEND="vapigen"
-
 inherit eutils autotools gnome2-utils vala xdg
-
 DESCRIPTION="A game manager application for GNOME"
-
 HOMEPAGE="https://wiki.gnome.org/Apps/Games"
-
 SRC_URI="https://git.gnome.org/browse/${PN}/snapshot/${PN}-${PV}.tar.xz"
 RESTRICT="mirror"
 IUSE="static-libs"
 KEYWORDS="~amd64"
-
 SLOT="0"
 LICENSE="GPL-3"
 RDEPEND=""
