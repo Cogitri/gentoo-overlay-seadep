@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=6
-
 inherit eutils gnome2-utils xdg
-
 DESCRIPTION="JS/HTML/CSS Terminal"
 HOMEPAGE="https://hyper.is/"
 SRC_URI="https://github.com/zeit/hyper/archive/${PV}.tar.gz -> hyper-${PV}.tar.gz"
@@ -13,11 +11,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-
 DEPEND="app-arch/xz-utils
 	dev-util/electron
 	net-libs/nodejs[npm]"
-
 RDEPEND="${DEPEND}"
 RESTRICT="mirror"
 
@@ -36,7 +32,6 @@ src_compile() {
 src_install() {	
 	local destdir="/opt/Hyper"
 	local insdir="dist/linux-unpacked"
-
 	insinto $destdir
 	doins -r $insdir/locales $insdir/resources
 	doins	$insdir/blink_image_resources_200_percent.pak \
@@ -49,12 +44,9 @@ src_install() {
 		$insdir/snapshot_blob.bin \
 		$insdir/libnode.so \
 		$insdir/libffmpeg.so
-
 	exeinto $destdir
 	doexe $insdir/hyper
-
-	dosym $destdir/hyper /usr/bin/hyper
-	
+	dosym $destdir/hyper /usr/bin/hyper	
 	insinto /usr/share/icons
 	doins -r $FILESDIR/hicolor 
 	insinto /usr/share/applications
