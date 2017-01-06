@@ -11,9 +11,12 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="CC-BY-ND-3.0 GPL-3"
 SLOT="0"
 RESTRICT="mirror"
-IUSE="binary"
+IUSE=""
 DEPEND=""
-RDEPEND="!binary? ( virtual/jre )"
+RDEPEND="|| (
+		dev-java/oracle-jre-bin[javafx]
+		dev-java/oracle-jdk-bin[javafx]
+	)"
 MY_PV=$(replace_all_version_separators '-')
 
 src_unpack() {
@@ -24,34 +27,13 @@ src_unpack() {
 }
 
 src_install() {
-	if use binary; then
-		local destdir="/opt/${PN}"
-		insinto $destdir
-		if use amd64; then
-			doins -r geogebra jre1.7.0_45-x86_64
-			exeinto $destdir/jre1.7.0_45-x86_64/bin
-			doexe jre1.7.0_45-x86_64/bin/java
-		elif use x86; then
-			doins -r geogebra jre1.7.0_45-i686
-			exeinto $destdir/jre1.7.0_45-i686/bin
-			doexe jre1.7.0_45-i686/bin/java
-		fi
-		exeinto $destdir/
-		doexe geogebra-portable
-		dosym $destdir/geogebra-portable /usr/bin/geogebra-portable
-		make_desktop_entry geogebra-portable Geogebra \
-		"geogebra" \
-		Science
-	else
-		local destdir="/opt/${PN}"
-		insinto $destdir
-		dosym $destdir/geogebra/geogebra /usr/bin/geogebra-bin
-		make_desktop_entry geogebra-bin Geogebra "geogebra" Science
-	fi
-
+	local destdir="/opt/${PN}"
+	insinto $destdir
 	doins -r geogebra
 	exeinto $destdir/geogebra
 	doexe geogebra/geogebra
+	dosym $destdir/geogebra/geogebra /usr/bin/geogebra-bin
+	make_desktop_entry geogebra-bin Geogebra "geogebra" Science
 }
 
 pkg_preinst() {
