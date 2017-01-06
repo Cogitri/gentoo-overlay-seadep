@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 	x11-libs/libxcb
 	x11-libs/libXtst"
 
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/gitkraken
 src_install() {
 	local destdir="/opt/${PN}"
 	insinto $destdir
