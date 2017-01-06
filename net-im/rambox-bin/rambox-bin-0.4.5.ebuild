@@ -3,19 +3,13 @@
 # $Id$
 
 EAPI=6
-
 inherit eutils gnome2-utils xdg
-
 DESCRIPTION="Free, Open Source and Cross Platform messaging and emailing app that combines common web applications into one."
-
 HOMEPAGE="http://rambox.pro/"
-
 SRC_URI="https://github.com/saenzramiro/rambox/releases/download/${PV}/Rambox-${PV}-x64.tar.gz
 	x86? ( https://github.com/saenzramiro/rambox/releases/download/${PV}/Rambox-${PV}-ia32.tar.gz )"
-
 RESTRICT="mirror"
 KEYWORDS="~amd64 ~x86"
-
 SLOT="0"
 LICENSE="GPL-3"
 RDEPEND=""
@@ -37,10 +31,8 @@ DEPEND="${RDEPEND}
 	"
 
 S=${WORKDIR}/Rambox-${PV} 
-
 src_install() {
 	local destdir="/opt/${PN}"
-
 	insinto $destdir
 	doins -r locales resources
 	doins	blink_image_resources_200_percent.pak \
@@ -53,15 +45,11 @@ src_install() {
 		snapshot_blob.bin \
 		libnode.so \
 		libffmpeg.so
-
 	exeinto $destdir
 	doexe Rambox
-
 	doicon -s 256 $FILESDIR/ico/rambox.png
-	dosym $destdir/Rambox /usr/bin/rambox
-	make_desktop_entry rambox Rambox \
-		"rambox" \
-		Network
+	dosym $destdir/Rambox /usr/bin/rambox-bin
+	make_desktop_entry rambox-bin Rambox "rambox" Network
 }
 
 pkg_preinst() {
