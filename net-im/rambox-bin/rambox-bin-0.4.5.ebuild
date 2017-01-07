@@ -1,10 +1,10 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=6
 inherit eutils gnome2-utils xdg
-DESCRIPTION="Free, Open Source and Cross Platform messaging and emailing app that combines common web applications into one."
+DESCRIPTION="Free, Open Source and Cross Platform messaging and emailing app"
 HOMEPAGE="http://rambox.pro/"
 SRC_URI="https://github.com/saenzramiro/rambox/releases/download/${PV}/Rambox-${PV}-x64.tar.gz
 	x86? ( https://github.com/saenzramiro/rambox/releases/download/${PV}/Rambox-${PV}-ia32.tar.gz )"
@@ -12,9 +12,8 @@ RESTRICT="mirror"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="GPL-3"
-RDEPEND=""
-DEPEND="${RDEPEND}
-	dev-libs/expat
+DEPEND=""
+RDEPEND="dev-libs/expat
 	dev-libs/libappindicator
 	dev-libs/nss
 	gnome-base/gconf
@@ -30,7 +29,7 @@ DEPEND="${RDEPEND}
 	x11-libs/libXtst
 	"
 
-S=${WORKDIR}/Rambox-${PV} 
+S=${WORKDIR}/Rambox-${PV}
 src_install() {
 	local destdir="/opt/${PN}"
 	insinto $destdir
@@ -47,7 +46,7 @@ src_install() {
 		libffmpeg.so
 	exeinto $destdir
 	doexe Rambox
-	doicon -s 256 $FILESDIR/ico/rambox.png
+	doicon -s 256 "$FILESDIR"/ico/rambox.png
 	dosym $destdir/Rambox /usr/bin/rambox-bin
 	make_desktop_entry rambox-bin Rambox "rambox" Network
 }
@@ -66,5 +65,3 @@ pkg_postrm() {
 	xdg_pkg_postrm
 	gnome2_icon_cache_update
 }
-
-
