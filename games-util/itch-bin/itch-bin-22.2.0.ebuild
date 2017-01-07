@@ -8,11 +8,11 @@ HOMEPAGE="https://itch.io/"
 SRC_URI="https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-amd64.tar.xz
 	 x86?	( https://github.com/itchio/itch/releases/download/v${PV}/itch-${PV}-386.tar.xz )"
 KEYWORDS="~amd64 ~x86"
-LICENSE="GPL-3"
+LICENSE="MIT"
 SLOT="0"
 RESTRICT="mirror"
-RDEPEND=""
-DEPEND="dev-libs/expat
+DEPEND=""
+RDEPEND="dev-libs/expat
 	dev-libs/nss
 	gnome-base/gconf
 	media-gfx/graphite2
@@ -55,7 +55,7 @@ src_install() {
 		libffmpeg.so
 	exeinto $destdir
 	doexe itch
-	doicon -s 256 $FILESDIR/ico/itch.png
+	doicon -s 256 "$FILESDIR"/ico/itch.png
 	dosym $destdir/itch /usr/bin/itch-bin
 	make_desktop_entry itch-bin Itch \
 		"itch" \
