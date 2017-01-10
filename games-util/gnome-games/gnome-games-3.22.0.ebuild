@@ -1,11 +1,11 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=6
 VALA_MIN_API_VERSION="0.26"
 VALA_USE_DEPEND="vapigen"
-inherit eutils autotools gnome2 gnome2-utils vala 
+inherit eutils autotools gnome2 gnome2-utils vala
 DESCRIPTION="A game manager application for GNOME"
 HOMEPAGE="https://wiki.gnome.org/Apps/Games"
 SRC_URI="https://git.gnome.org/browse/${PN}/snapshot/${PN}-${PV}.tar.xz"
@@ -34,12 +34,11 @@ src_configure() {
 	gnome2_src_configure \
 		--disable-schemas-compile \
 		$(use_enable nls) \
-		$(use_enable static-libs static) 
-		
+		$(use_enable static-libs static)
 }
 
 src_compile() {
-	gnome2_src_compile 
+	gnome2_src_compile
 }
 
 src_install() {
@@ -48,16 +47,15 @@ src_install() {
 
 pkg_preinst() {
 	gnome2_pkg_preinst
-	gnome2_schemas_savelist 
+	gnome2_schemas_savelist
 }
 
 pkg_postinst() {
 	gnome2_pkg_postinst
-	gnome2_schemas_update 
+	gnome2_schemas_update
 }
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-	gnome2_schemas_update 
+	gnome2_schemas_update
 }
-
