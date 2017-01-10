@@ -30,3 +30,5 @@ This overlay is not official but is available in layman's repository.
 First time using layman? See https://wiki.gentoo.org/wiki/Layman
 
     layman -a seadep
+
+Don't want to use layman? Copy seadep.conf to /etc/portage/repos.conf/seadep.conf and issue emerge --sync
