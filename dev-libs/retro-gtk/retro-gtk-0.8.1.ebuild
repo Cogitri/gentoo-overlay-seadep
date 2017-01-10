@@ -5,12 +5,13 @@
 EAPI=6
 VALA_MIN_API_VERSION="0.26"
 VALA_USE_DEPEND="vapigen"
+AM_OPTS="--include-deps --gnu"
 inherit eutils autotools vala
 DESCRIPTION="Toolkit to write Gtk+ 3 based libretro frontends"
 HOMEPAGE="https://git.gnome.org/browse/retro-gtk/"
 SRC_URI="https://git.gnome.org/browse/retro-gtk/snapshot/retro-gtk-${PV}.tar.xz"
 RESTRICT="mirror"
-IUSE="static-libs"
+IUSE="+introspection nls static-libs"
 KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="GPL-3"
@@ -22,18 +23,23 @@ DEPEND="${vala_depend}
 	"
 
 src_prepare() {
-	#Set the used vala version to 0.32, as gentoo doesn't symlink the newest version to valac
 	vala_src_prepare
-	./autogen.sh #Not pretty, I'll try to make it manually soon
+	eautoreconf
 	eapply_user
 }
 
+src_configure() {
+	econf \
+		$(use_enable introspection) \
+		$(use_enable nls) \
+		$(use_enable static-libs static)
+}
 src_compile() {
 	emake || die "Make failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "Install failed"
 }
 
 
