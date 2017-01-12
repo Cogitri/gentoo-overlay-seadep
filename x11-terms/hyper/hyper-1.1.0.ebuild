@@ -1,6 +1,6 @@
-# Copyright 1999-2017 Gentoo
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=6
 inherit eutils gnome2-utils xdg
@@ -12,9 +12,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 DEPEND="app-arch/xz-utils
-	dev-util/electron
+	dev-util/electron:*
 	net-libs/nodejs[npm]"
-RDEPEND="${DEPEND}"
+RDEPEND="app-arch/xz-utils
+	dev-util/electron:*"
 RESTRICT="mirror"
 
 src_prepare() {
@@ -28,8 +29,8 @@ src_prepare() {
 src_compile() {
 	npm run pack
 }
-	
-src_install() {	
+
+src_install() {
 	local destdir="/opt/Hyper"
 	local insdir="dist/linux-unpacked"
 	insinto $destdir
@@ -46,13 +47,12 @@ src_install() {
 		$insdir/libffmpeg.so
 	exeinto $destdir
 	doexe $insdir/hyper
-	dosym $destdir/hyper /usr/bin/hyper	
+	dosym $destdir/hyper /usr/bin/hyper
 	insinto /usr/share/icons
-	doins -r $FILESDIR/hicolor 
+	doins -r "$FILESDIR"/hicolor
 	insinto /usr/share/applications
-	doins $FILESDIR/hyper.desktop
+	doins "$FILESDIR"/hyper.desktop
 }
-
 
 pkg_preinst() {
 	xdg_pkg_preinst
@@ -68,4 +68,3 @@ pkg_postrm() {
 	xdg_pkg_postrm
 	gnome2_icon_cache_update
 }
-
