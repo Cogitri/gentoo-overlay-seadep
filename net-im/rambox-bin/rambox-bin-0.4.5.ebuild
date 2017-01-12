@@ -26,8 +26,7 @@ RDEPEND="dev-libs/expat
 	x11-libs/gtk+
 	x11-libs/libnotify
 	x11-libs/libxcb
-	x11-libs/libXtst
-	"
+	x11-libs/libXtst"
 
 S=${WORKDIR}/Rambox-${PV}
 src_install() {
@@ -46,7 +45,7 @@ src_install() {
 		libffmpeg.so
 	exeinto $destdir
 	doexe Rambox
-	doicon -s 256 "$FILESDIR"/ico/rambox.png
+	doicon -s 128 "$FILESDIR"/ico/rambox.png
 	dosym $destdir/Rambox /usr/bin/rambox-bin
 	make_desktop_entry rambox-bin Rambox "rambox" Network
 }
