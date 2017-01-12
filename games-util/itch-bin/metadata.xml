@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		itch.io is a simple way to find and share indie games online for free.
+	</longdescription>
+	<use>
+	</use>
+</pkgmetadata>
