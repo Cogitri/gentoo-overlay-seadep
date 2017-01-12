@@ -1,4 +1,6 @@
-gentoo-overlay
+**Current build status:** [![Build Status](https://travis-ci.org/Keepco/gentoo-overlay-seadep.svg)](https://travis-ci.org/Keepco/gentoo-overlay-seadep)
+
+Seadep-Overlay
 ==============
 
 Overlay for Gentoo/Linux packages
