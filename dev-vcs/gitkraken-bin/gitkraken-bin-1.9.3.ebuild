@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -10,7 +10,7 @@ SRC_URI="https://release.gitkraken.com/linux/gitkraken-amd64.tar.gz"
 RESTRICT="mirror"
 KEYWORDS="~amd64"
 SLOT="0"
-LICENSE="EULA"
+LICENSE="gitkraken-EULA"
 RDEPEND=""
 DEPEND="${RDEPEND}
 	dev-libs/expat
@@ -40,11 +40,9 @@ src_install() {
 		libnode.so
 	exeinto $destdir
 	doexe gitkraken
-	doicon -s 512 $FILESDIR/ico/gitkraken.png
+	doicon -s 512 "$FILESDIR"/ico/gitkraken.png
 	dosym $destdir/gitkraken /usr/bin/gitkraken
-	make_desktop_entry gitkraken Gitkraken \
-		"gitkraken" \
-		Network
+	make_desktop_entry gitkraken Gitkraken "gitkraken" Network
 }
 
 pkg_preinst() {
@@ -61,4 +59,3 @@ pkg_postrm() {
 	xdg_pkg_postrm
 	gnome2_icon_cache_update
 }
-
