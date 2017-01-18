@@ -4,9 +4,11 @@
 
 EAPI=6
 inherit eutils gnome2-utils versionator xdg
+
+MY_PV=$(replace_all_version_separators '-')
 DESCRIPTION="Mathematics software for geometry"
 HOMEPAGE="https://www.geogebra.org"
-SRC_URI="https://www.geogebra.org/home/get/package/linux-port -> ${P}.tar.bz2"
+SRC_URI="https://download.geogebra.org/installers/5.0/GeoGebra-Linux-Portable-${MY_PV}.tar.bz2 -> ${P}.tar.bz2"
 KEYWORDS="~amd64 ~x86"
 LICENSE="CC-BY-NC-SA-3.0 GPL-3"
 SLOT="0"
@@ -17,7 +19,7 @@ RDEPEND="|| (
 		dev-java/oracle-jre-bin[javafx]
 		dev-java/oracle-jdk-bin[javafx]
 	)"
-MY_PV=$(replace_all_version_separators '-')
+
 
 src_unpack() {
 	if [ ${A} != "" ]; then
