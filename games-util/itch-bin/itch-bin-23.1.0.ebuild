@@ -57,9 +57,7 @@ src_install() {
 	doexe itch
 	doicon -s 256 "$FILESDIR"/ico/itch.png
 	dosym $destdir/itch /usr/bin/itch-bin
-	make_desktop_entry itch-bin Itch \
-		"itch" \
-		Network
+	make_desktop_entry itch-bin Itch "itch" Network
 }
 
 pkg_preinst() {
