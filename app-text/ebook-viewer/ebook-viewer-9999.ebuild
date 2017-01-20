@@ -11,7 +11,7 @@ KEYWORDS="~amd64"
 LICENSE="GPL-3"
 SLOT="0"
 DEPEND=""
-RDEPEND="net-libs/webkit-gtk[introspection]
+RDEPEND="net-libs/webkit-gtk:3[introspection]
 	x11-libs/gtk+[introspection]
 	dev-python/pygobject[python_targets_python3_4]
 	dev-lang/python:3.4"
