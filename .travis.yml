@@ -31,3 +31,10 @@ before_script:
 script:
     - ./../spinner.sh "python ../portage-portage-${PORTAGE_VER}/repoman/bin/repoman full -d"
 # You can append own scripts after this line
+notifications:
+  email:
+    recipients:
+      - rasmus.thomsen@live.de
+    on_success: never
+    on_failure: always
+
