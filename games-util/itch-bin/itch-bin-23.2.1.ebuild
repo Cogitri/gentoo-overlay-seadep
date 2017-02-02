@@ -27,6 +27,11 @@ RDEPEND="dev-libs/expat
 	x11-libs/libXScrnSaver
 	x11-libs/libXtst"
 
+QA_PREBUILT="
+	/opt/itch-bin/itch
+	/opt/itch-bin/libffmpeg.so
+	/opt/itch-bin/libnode.so"
+
 src_unpack() {
 	if [ ${A} != "" ]; then
 		unpack ${A}
