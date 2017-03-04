@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		Games is a game manager application for GNOME.
+	</longdescription>
+	<use>
+		<flag name="spell">Use gspell for spell-checking</flag>
+		<flag name="autoar">Use gnome-autoar for export/import support</flag>
+
+	</use>
+</pkgmetadata>
