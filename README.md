@@ -15,9 +15,13 @@ Gitkraken - https://www.gitkraken.com
 
 Gnome-Games - https://wiki.gnome.org/Apps/Games
 
+Gnome-Recipes - https://wiki.gnome.org/Apps/Recipes
+
 Hyper - https://hyper.is/
 
 Itch - https://github.com/itchio/itch
+
+Rambox - http://rambox.pro/
 
 Retro-GTK - https://git.gnome.org/browse/retro-gtk/
 
