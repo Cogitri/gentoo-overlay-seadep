@@ -43,9 +43,9 @@ src_install() {
 		libnode.so \
 		libffmpeg.so
 	exeinto $destdir
-	doexe Rambox
+	doexe rambox
 	doicon -s 128 "$FILESDIR"/ico/rambox.png
-	dosym $destdir/Rambox /usr/bin/rambox-bin
+	dosym $destdir/rambox /usr/bin/rambox-bin
 	make_desktop_entry rambox-bin Rambox "rambox" Network
 }
 
