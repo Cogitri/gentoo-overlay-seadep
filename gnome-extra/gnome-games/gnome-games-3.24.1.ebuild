@@ -16,10 +16,10 @@ LICENSE="GPL-3"
 RDEPEND=""
 DEPEND="app-arch/libarchive
 	app-misc/tracker
-	${vala_depend}
 	dev-libs/retro-gtk
 	media-libs/grilo[vala]
 	x11-libs/cairo
+	${vala_depend}
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {
