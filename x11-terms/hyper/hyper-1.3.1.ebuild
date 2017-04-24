@@ -10,8 +10,10 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-DEPEND="app-arch/xz-utils
+DEPEND="app-arch/rpm
 	dev-util/electron:*
+	media-gfx/graphicsmagick
+	media-libs/libicns
 	net-libs/nodejs[npm]"
 RDEPEND="app-arch/xz-utils
 	dev-util/electron:*"
@@ -21,12 +23,12 @@ src_prepare() {
 	einfo "Please create /usr/etc if you're using nodejs <=5.6.0,"
 	einfo "as NPM otherwise tries to create it,violating the sandbox rules."
 	einfo "See https://github.com/npm/npm/issues/11486"
-	npm install || die "npm die failed"
+	npm install || npm run rebuild-node-pty && npm install || die "npm die failed!" # Not a nice solution, but it works for now
 	eapply_user
 }
 
 src_compile() {
-	npm run pack || die "Npm packaging failed!"
+	npm run dist || die "npm packaging failed!"
 }
 
 src_install() {
