@@ -21,12 +21,12 @@ src_prepare() {
 	einfo "Please create /usr/etc if you're using nodejs <=5.6.0,"
 	einfo "as NPM otherwise tries to create it,violating the sandbox rules."
 	einfo "See https://github.com/npm/npm/issues/11486"
-	npm install
+	npm install || die "npm die failed"
 	eapply_user
 }
 
 src_compile() {
-	npm run pack
+	npm run pack || die "Npm packaging failed!"
 }
 
 src_install() {
