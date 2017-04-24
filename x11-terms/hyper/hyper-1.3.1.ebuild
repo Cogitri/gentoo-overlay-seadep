@@ -63,6 +63,9 @@ pkg_preinst() {
 pkg_postinst() {
 	xdg_pkg_postinst
 	gnome2_icon_cache_update
+	einfo "You might have to add fs.inotify.max_user_watches=524288"
+	einfo "or something similiar"
+	einfo "see https://github.com/zeit/hyper/issues/1502"
 }
 
 pkg_postrm() {
