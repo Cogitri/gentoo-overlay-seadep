@@ -26,13 +26,13 @@ RDEPEND="dev-libs/appstream-glib
 	media-libs/gstreamer:1.0
 	media-libs/gst-plugins-base:1.0
 	x11-libs/cairo
-	>=x11-libs/gtk+-3.20.0"
+	>=x11-libs/gtk+-3.20.0
+	appindicator? ( dev-libs/libappindicator:3 )"
 
 DEPEND="${RDEPEND}
 	$(vala_depend)
 	dev-util/intltool
 	virtual/pkgconfig
-	appindicator? ( dev-libs/libappindicator:3 )
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {
