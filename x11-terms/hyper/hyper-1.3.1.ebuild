@@ -21,6 +21,9 @@ src_prepare() {
 	einfo "Please create /usr/etc if you're using nodejs <=5.6.0,"
 	einfo "as NPM otherwise tries to create it,violating the sandbox rules."
 	einfo "See https://github.com/npm/npm/issues/11486"
+	#Newer extract zip versions don't work with electron
+	#See: https://github.com/electron/electron/issues/9323
+	npm install extract-zip@1.6.0
 	npm install || npm run rebuild-node-pty && npm install || die "npm die failed!" # Not a nice solution, but it works for now
 	eapply_user
 }
