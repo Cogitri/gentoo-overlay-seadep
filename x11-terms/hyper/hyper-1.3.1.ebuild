@@ -11,12 +11,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 DEPEND="app-arch/rpm
-	dev-util/electron:*
 	media-gfx/graphicsmagick
 	media-libs/libicns
 	net-libs/nodejs[npm]"
-RDEPEND="app-arch/xz-utils
-	dev-util/electron:*"
+RDEPEND="app-arch/xz-utils"
 RESTRICT="mirror"
 
 src_prepare() {
