@@ -2,13 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit eutils git-r3 gnome2 gnome2-utils
-EGIT_REPO_URI="https://git.gnome.org/browse/recipes.git"
-EGIT_MIN_CLONE_TYPE="single"
-EGIT_COMMIT="${PV}"
+inherit eutils gnome2 gnome2-utils
+#EGIT_REPO_URI="https://git.gnome.org/browse/recipes.git"
+#EGIT_MIN_CLONE_TYPE="single"
+#EGIT_COMMIT="${PV}"
 DESCRIPTION="A game manager application for GNOME"
 HOMEPAGE="https://wiki.gnome.org/Apps/Games"
-SRC_URI=""
 RESTRICT="mirror"
 IUSE="autoar sound"
 KEYWORDS="~amd64"
