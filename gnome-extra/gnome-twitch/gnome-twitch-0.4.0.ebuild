@@ -53,23 +53,43 @@ RDEPEND="${DEPEND}
 
 src_configure() {
 	# Set meson parameters
-	local params
+	local backends
 
-	params="--prefix=/usr --libdir=lib --buildtype=release -Ddo-post-install=false"
-	if use gst-cairo ; then
-		params="${params} -Dwith-player-gstreamer-cairo=true"
+	if use gst-cairo; then
+		backends+="gstreamer-cairo"
 	fi
-	if use gst-opengl ; then
-		params="${params} -Dwith-player-gstreamer-opengl=true"
+	if use gst-clutter; then
+		if [ -z "$backends" ]
+		then
+			backends+="gstreamer-clutter"
+		else
+			backends+=",gstreamer-clutter"
+		fi
 	fi
-	if use gst-clutter ; then
-		params="${params} -Dwith-player-gstreamer-clutter=true"
+	if use gst-opengl; then
+		if [ -z "$backends" ]
+		then
+			backends+="gstreamer-opengl"
+		else
+			backends+=",gstreamer-opengl"
+		fi
 	fi
-	if use mpv ; then
-		params="${params} -Dwith-player-mpv-opengl=true"
+	if use mpv; then
+		if [ -z "$backends" ]
+		then
+			backends+="mpv-opengl"
+		else
+			backends+=",mpv-opengl"
+		fi
 	fi
 
-	meson ${params} -Db_lundef=false build || die "Meson configure failed!"
+	meson --prefix=/usr \
+	--libdir=lib \
+	--buildtype=release \
+	-Ddo-post-install=false \
+	-Db_lundef=false build \
+	${backends} \
+	|| die "Meson configure failed!"
 }
 
 src_compile() {
