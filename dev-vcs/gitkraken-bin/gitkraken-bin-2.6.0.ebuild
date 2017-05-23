@@ -5,7 +5,7 @@ EAPI=6
 inherit eutils gnome2-utils xdg
 DESCRIPTION="The downright luxurious Git client,for Windows, Mac & Linux"
 HOMEPAGE="https://www.gitkraken.com"
-SRC_URI="https://release.gitkraken.com/linux/v${PV}.tar.gz"
+SRC_URI="https://release.gitkraken.com/linux/v${PV}.tar.gz -> ${P}.tar.gz"
 RESTRICT="mirror"
 KEYWORDS="~amd64"
 SLOT="0"
