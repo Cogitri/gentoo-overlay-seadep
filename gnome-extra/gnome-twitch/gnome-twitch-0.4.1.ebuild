@@ -3,22 +3,19 @@
 
 EAPI=6
 
-inherit gnome2-utils fdo-mime
+inherit gnome2-utils fdo-mime meson
 
 DESCRIPTION="Enjoy Twitch on your GNU/Linux desktop"
 HOMEPAGE="http://gnome-twitch.vinszent.com/"
-SRC_URI="https://github.com/vinszent/gnome-twitch/archive/v${PV}.tar.gz"
+SRC_URI="https://github.com/vinszent/gnome-twitch/archive/v${PV}.tar.gz -> ${P}.tar.gz "
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 DOCS="README.md CHANGELOG.md CONTRIBUTING.md"
-IUSE="+gst-cairo gst-opengl gst-clutter mpv"
+IUSE="gst-cairo gst-opengl gst-clutter mpv"
 
-DEPEND=">=dev-util/meson-0.32.0
-		dev-util/ninja"
-RDEPEND="${DEPEND}
-		>=x11-libs/gtk+-3.20
+RDEPEND=">=x11-libs/gtk+-3.20
 		net-libs/libsoup
 		dev-libs/json-glib
 		net-libs/webkit-gtk
@@ -83,22 +80,21 @@ src_configure() {
 		fi
 	fi
 
-	meson --prefix=/usr \
-	--libdir=lib \
-	--buildtype=release \
-	-Ddo-post-install=false \
-	-Db_lundef=false build \
-	${backends} \
-	|| die "Meson configure failed!"
+	emesonargs="-Dbuild-player-backends="${backends}" -Ddo-post-install=false -Db_lundef=false"
+
+	meson_src_configure
 }
 
 src_compile() {
-	ninja -v -C build || die "Ninja build failed!"
+	meson_src_compile
+}
+
+src_test() {
+	meson_src_test
 }
 
 src_install() {
-	DESTDIR="${D}" ninja -C build install || die "Ninja install failed!"
-	dodoc ${DOCS}
+	meson_src_install
 }
 
 pkg_preinst() {
