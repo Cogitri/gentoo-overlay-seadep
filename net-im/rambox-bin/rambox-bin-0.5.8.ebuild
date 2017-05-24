@@ -6,9 +6,9 @@ inherit eutils gnome2-utils xdg
 DESCRIPTION="Free, Open Source and Cross Platform messaging and emailing app"
 HOMEPAGE="http://rambox.pro/"
 SRC_URI="https://github.com/saenzramiro/rambox/releases/download/${PV}/Rambox-${PV}-x64.tar.gz
-	x86? ( https://github.com/saenzramiro/rambox/releases/download/v${PV}/Rambox-${PV}-ia32.tar.gz )"
+	x86? ( https://github.com/saenzramiro/rambox/releases/download/${PV}/Rambox-${PV}-ia32.tar.gz )"
 RESTRICT="mirror"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 SLOT="0"
 LICENSE="GPL-3"
 DEPEND=""
