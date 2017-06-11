@@ -10,7 +10,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-DEPEND="app-arch/rpm
+DEPEND="
 	media-gfx/graphicsmagick
 	media-libs/libicns
 	net-libs/nodejs[npm]"
@@ -22,6 +22,7 @@ src_prepare() {
 	einfo "as NPM otherwise tries to create it, violating the sandbox rules."
 	einfo "See https://github.com/npm/npm/issues/11486"
 	npm install || npm run rebuild-node-pty && npm install || die "npm die failed!" # Not a nice solution, but it works for now
+	sed -i 's/"build": {/"donotbuild": {/g' package.json
 	eapply_user
 }
 
