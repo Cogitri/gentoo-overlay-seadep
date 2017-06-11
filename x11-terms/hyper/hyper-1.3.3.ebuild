@@ -5,7 +5,12 @@ EAPI=6
 inherit eutils gnome2-utils xdg
 DESCRIPTION="JS/HTML/CSS Terminal"
 HOMEPAGE="https://hyper.is/"
-SRC_URI="https://github.com/zeit/hyper/archive/${PV}.tar.gz -> hyper-${PV}.tar.gz"
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="git://github.com/zeit/hyper.git"
+else
+	SRC_URI="https://github.com/zeit/hyper/archive/${PV}.tar.gz -> hyper-${PV}.tar.gz"
+fi
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
