@@ -26,7 +26,13 @@ DEPEND="${RDEPEND}
 	x11-libs/libxcb
 	x11-libs/libXtst"
 
+QA_PREBUILT="opt/gitkraken-bin/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
+	opt/gitkraken-bin/gitkraken"
+QA_PRESTRIPPED="/opt/gitkraken-bin/libffmpeg.so
+	/opt/gitkraken-bin/libnode.so"
+
 S=${WORKDIR}/gitkraken
+
 src_install() {
 	local destdir="/opt/${PN}"
 	insinto $destdir
