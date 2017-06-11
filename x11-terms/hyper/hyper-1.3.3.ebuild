@@ -17,6 +17,10 @@ DEPEND="
 RDEPEND="app-arch/xz-utils"
 RESTRICT="mirror"
 
+QA_PRESTRIPPED="/opt/Hyper/libnode.so
+		/opt/Hyper/libffmpeg.so
+		/opt/Hyper/hyper"
+
 src_prepare() {
 	einfo "Please create /usr/etc if you're using nodejs <=5.6.0,"
 	einfo "as NPM otherwise tries to create it, violating the sandbox rules."
