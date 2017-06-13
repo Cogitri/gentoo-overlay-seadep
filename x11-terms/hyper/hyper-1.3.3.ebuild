@@ -27,6 +27,7 @@ src_prepare() {
 	einfo "See https://github.com/npm/npm/issues/11486"
 	npm install || npm run rebuild-node-pty && npm install || die "npm die failed!" # Not a nice solution, but it works for now
 	sed -i 's/"build": {/"donotbuild": {/g' package.json
+	sed -i 's/"version": "1.3.2"/"version": "1.3.3"/g' app/package.json
 	eapply_user
 }
 
