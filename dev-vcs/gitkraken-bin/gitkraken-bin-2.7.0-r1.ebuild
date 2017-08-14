@@ -10,11 +10,11 @@ RESTRICT="mirror"
 KEYWORDS="~amd64"
 SLOT="0"
 LICENSE="gitkraken-EULA"
-RDEPEND=""
-DEPEND="${RDEPEND}
+RDEPEND="
 	dev-libs/expat
 	dev-libs/nss
 	gnome-base/gconf
+	gnome-base/libgnome-keyring
 	media-gfx/graphite2
 	media-libs/alsa-lib
 	media-libs/libpng
@@ -25,6 +25,8 @@ DEPEND="${RDEPEND}
 	x11-libs/libnotify
 	x11-libs/libxcb
 	x11-libs/libXtst"
+
+DEPEND="${RDEPEND}"
 
 QA_PREBUILT="opt/gitkraken-bin/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
 	opt/gitkraken-bin/gitkraken"
