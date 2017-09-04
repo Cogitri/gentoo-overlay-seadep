@@ -13,7 +13,8 @@ IUSE=""
 DEPEND="
 	media-gfx/graphicsmagick
 	media-libs/libicns
-	net-libs/nodejs[npm]"
+	net-libs/nodejs[npm]
+	sys-apps/yarn"
 RDEPEND="app-arch/xz-utils"
 RESTRICT="mirror"
 
