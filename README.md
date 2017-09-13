@@ -1,4 +1,4 @@
-**Current build status:** [![Build Status](https://travis-ci.org/Keepco/gentoo-overlay-seadep.svg)](https://travis-ci.org/Keepco/gentoo-overlay-seadep)
+**Current build status:** [![Build Status](https://travis-ci.org/Cogitri/gentoo-overlay-seadep.svg)](https://travis-ci.org/Cogitri/gentoo-overlay-seadep)
 
 Seadep-Overlay
 ==============
