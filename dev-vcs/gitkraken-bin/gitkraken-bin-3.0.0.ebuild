@@ -21,7 +21,7 @@ RDEPEND="
 	net-print/cups
 	net-libs/gnutls
 	sys-libs/zlib
-	x11-libs/gtk+
+	x11-libs/gtk+:3
 	x11-libs/libnotify
 	x11-libs/libxcb
 	x11-libs/libXtst"
