@@ -13,7 +13,6 @@ IUSE=""
 DEPEND="
 	media-gfx/graphicsmagick
 	media-libs/libicns
-	net-libs/nodejs[npm]
 	sys-apps/yarn"
 RDEPEND="app-arch/xz-utils"
 RESTRICT="mirror"
@@ -26,7 +25,8 @@ src_prepare() {
 	einfo "Please create /usr/etc if you're using nodejs <=5.6.0,"
 	einfo "as NPM otherwise tries to create it, violating the sandbox rules."
 	einfo "See https://github.com/npm/npm/issues/11486"
-	npm install || npm run rebuild-node-pty && npm install || die "npm die failed!" # Not a nice solution, but it works for now
+	yarn install || yarn run rebuild-node-pty \
+		&& yarn install || die "yarn dependency instllation failed!" # Not a nice solution, but it works for now
 
 	# Don't build RPMs & DEBs
 	sed -i 's/"build": {/"donotbuild": {/g' package.json
@@ -35,7 +35,7 @@ src_prepare() {
 }
 
 src_compile() {
-	npm run dist || die "npm packaging failed!"
+	yarn run dist || die "yarn packaging failed!"
 }
 
 src_install() {
