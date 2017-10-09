@@ -36,6 +36,7 @@ QA_PRESTRIPPED="/opt/gitkraken-bin/libffmpeg.so
 S=${WORKDIR}/gitkraken
 
 src_install() {
+	dosym libcurl.so.4 /usr/$(get_libdir)/libcurl-gnutls.so.4
 	local destdir="/opt/${PN}"
 	insinto $destdir
 	doins -r locales resources
