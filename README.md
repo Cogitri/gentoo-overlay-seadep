@@ -1,3 +1,5 @@
+***Currently this overlay isn't really actively maintained, since I switched over to Exherbo. In case you want to maintain one of the packages in this overlay in your own just copy it over ( would be nice if you opened an issue about it too, so that I drop mine)***
+
 **Current build status:** [![Build Status](https://travis-ci.org/Cogitri/gentoo-overlay-seadep.svg)](https://travis-ci.org/Cogitri/gentoo-overlay-seadep)
 
 Seadep-Overlay
