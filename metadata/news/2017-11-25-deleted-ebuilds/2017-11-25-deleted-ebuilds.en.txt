@@ -1,0 +1,25 @@
+Title: Multiple ebuild were removed
+Author: Rasmus Thomsen Rasmus.thomsen@protonmail.com
+Content-Type: text/plain
+Posted: 2017-11-25
+Revision: 1
+News-Item-Format: 1.0
+
+Multiple ebuilds were moved to the https://github.com/csmk/frabjous overlay, including:
+
+dev-python/validictory
+
+dev-python/pycryptodomex
+
+dev-python/gpsoauth
+
+dev-python/gmusicapi
+
+dev-vcs/gitkraken
+
+media-sound/gmusicproxy
+
+net-im/rambox-bin
+
+You may want to switch to using the frabjous overlay for these packages, to ensure that
+you'll be getting timely ( or any ) updates.
