@@ -11,11 +11,11 @@ The following packages are available in this overlay:
 
 Easy-Ebook-Viewer - https://github.com/michaldaniel/Ebook-Viewer
 
-Gitkraken - https://www.gitkraken.com
+~~Gitkraken - https://www.gitkraken.com~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
-Gmusicapi - https://github.com/simon-weber/gmusicapi
+~~Gmusicapi - https://github.com/simon-weber/gmusicapi~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
-Gmusicproxy - https://github.com/diraimondo/gmusicproxy
+~~Gmusicproxy - https://github.com/diraimondo/gmusicproxy~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
 Gnome-Games - https://wiki.gnome.org/Apps/Games
 
@@ -23,19 +23,19 @@ Gnome-Recipes - https://wiki.gnome.org/Apps/Recipes
 
 Gnome-Twitch - https://wiki.gnome.org/Apps/GnomeTwitch
 
-Gpsoauth - https://github.com/simon-weber/gpsoauth
+~~Gpsoauth - https://github.com/simon-weber/gpsoauth~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
 Hyper - https://hyper.is/
 
 Itch - https://github.com/itchio/itch
 
-PyCryptodomex - https://github.com/Legrandin/pycryptodome
+~~PyCryptodomex - https://github.com/Legrandin/pycryptodome~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
-Rambox - http://rambox.pro/
+~~Rambox - http://rambox.pro/~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
 Retro-GTK - https://git.gnome.org/browse/retro-gtk/
 
-Validictory - https://github.com/jamesturk/validictory
+~~Validictory - https://github.com/jamesturk/validictory~~ ( Moved to the [frabjous overlay](https://github.com/csmk/frabjous) )
 
 
 ## Warning
