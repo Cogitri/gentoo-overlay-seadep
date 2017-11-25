@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-<pkgmetadata>
-	<longdescription lang="en">
-		A self-contained cryptographic library for Python - version which is independent of the old PyCrypto
-	</longdescription>
-	<use>
-	</use>
-</pkgmetadata>
